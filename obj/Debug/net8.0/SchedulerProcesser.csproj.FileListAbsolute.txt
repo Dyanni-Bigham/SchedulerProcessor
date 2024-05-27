@@ -12,3 +12,4 @@ C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\refint\
 C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\SchedulerProcesser.pdb
 C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\SchedulerProcesser.genruntimeconfig.cache
 C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\ref\SchedulerProcesser.dll
+C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\SchedulerProcesser.sourcelink.json
