@@ -13,3 +13,6 @@ C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\Schedul
 C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\SchedulerProcesser.genruntimeconfig.cache
 C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\ref\SchedulerProcesser.dll
 C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\SchedulerProcesser.sourcelink.json
+C:\Users\dyann\Documents\Development\SchedulerProcesser\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\SchedulerProcesser.csproj.AssemblyReference.cache
+C:\Users\dyann\Documents\Development\SchedulerProcesser\obj\Debug\net8.0\Schedule.DC47B4A2.Up2Date

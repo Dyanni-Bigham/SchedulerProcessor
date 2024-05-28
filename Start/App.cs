@@ -1,9 +1,11 @@
 using System;
+using Utils;
 
 namespace Start
 {
-    public class App
+    class App
     {
+
         public static void Start()
         {   
             // Read the config file (maybe make this a class that can do that) (FileReader class)
@@ -16,8 +18,11 @@ namespace Start
 
                 // Create a class that will handle the processing (Processor class)
 
-            // Create an exeception class (Error class)
-            Console.WriteLine("Application is starting");
+            // Create an exeception class (Error)
+            //Console.WriteLine("Application is starting");
+            string filePath = "./config.json";
+            FileReader reader = new FileReader();
+            reader.ReadFile(filePath);
         }
     }
 }
