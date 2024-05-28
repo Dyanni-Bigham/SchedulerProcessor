@@ -1,0 +1,34 @@
+[
+  {
+    "Days": [
+      "Monday",
+      "Tuesday",
+      "Friday"
+    ],
+    "Apps": [
+      "C:\\WINDOWS\\system32\\control.exe"
+    ],
+    "Interval": "1 Hour"
+  },
+  {
+    "Days": [
+      "Monday",
+      "Wednesday",
+      "Saturday"
+    ],
+    "Apps": [
+      "C:\\Users\\dyann\\AppData\\Roaming\\Spotify\\Spotify.exe"
+    ],
+    "Interval": "2 Hour"
+  },
+  {
+    "Days": [
+      "Monday",
+      "Wednesday"
+    ],
+    "Apps": [
+      "C:\\Users\\dyann\\AppData\\Local\\Programs\\Evernote\\Evernote.exe"
+    ],
+    "Interval": "30 Minutes"
+  }
+]
