@@ -21,8 +21,9 @@ namespace Start
             // Create an exeception class (Error)
             //Console.WriteLine("Application is starting");
             string filePath = "./config.json";
-            FileReader reader = new FileReader();
-            reader.ReadFile(filePath);
+            FileReader reader = new FileReader(filePath);
+            reader.ReadFile();
+            reader.displayEntries();
         }
     }
 }
