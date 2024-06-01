@@ -24,11 +24,7 @@ namespace Utils
 
                 foreach (Entry entry in newEntries)
                 {
-                    /*
-                    Console.WriteLine("Days: " + string.Join(", ", entry.days ?? new List<string>()));
-                    Console.WriteLine("App: " + string.Join(", ", entry.apps ?? new List<string>()));
-                    Console.WriteLine("Interval: " + entry.interval);
-                    */
+
                     Entry newEntry = new Entry(entry.days, entry.apps, entry.interval);
                     this.entries.Add(newEntry);
                     Console.WriteLine("Entry successfully added");
@@ -41,12 +37,12 @@ namespace Utils
             }
         }
         
-        public List<Entry> getEntries()
+        public List<Entry> GetEntries()
         {
             return this.entries;
         }
 
-        public void displayEntries()
+        public void isplayEntries()
         {
             for (int i = 0; i < this.entries.Count; i++)
             {

@@ -20,10 +20,19 @@ namespace Start
 
             // Create an exeception class (Error)
             //Console.WriteLine("Application is starting");
+            /*
             string filePath = "./config.json";
             FileReader reader = new FileReader(filePath);
             reader.ReadFile();
-            reader.displayEntries();
+            reader.DisplayEntries();
+            */
+
+            // Testing String Helper functionality
+            string[] test = StringHelper.SplitInterval("hahahah");
+            foreach (string val in test)
+            {
+                Console.WriteLine(val);
+            }
         }
     }
 }
