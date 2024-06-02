@@ -4,9 +4,9 @@ namespace Utils
 {
     public class Time
     {
-        public static void ConvertToSeconds(string timeToConvert)
+        public static void ConvertToSeconds(string[] timeToConvert)
         {
-            //TODO
+            int numValue = timeToConvert[0].
         }
     }
 }
