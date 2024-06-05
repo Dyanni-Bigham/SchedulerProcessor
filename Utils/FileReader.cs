@@ -5,7 +5,7 @@ using Objects;
 
 namespace Utils
 {
-    class FileReader
+    public class FileReader
     {
         private string filePath;
         private List<Entry> entries;
@@ -42,7 +42,7 @@ namespace Utils
             return this.entries;
         }
 
-        public void isplayEntries()
+        public void DisplayEntries()
         {
             for (int i = 0; i < this.entries.Count; i++)
             {
