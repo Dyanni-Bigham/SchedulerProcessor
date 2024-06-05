@@ -3,7 +3,7 @@ using Utils;
 
 namespace Start
 {
-    class App
+    public class App
     {
 
         public static void Start()
