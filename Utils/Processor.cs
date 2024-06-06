@@ -6,31 +6,60 @@ namespace Utils
     public class Processor
     {
         // Have global dictionary for the dictionary
-        private Dictionary<string, Dictionary<string, List<string>>> scheduleTemplate =
+        private static Dictionary<string, Dictionary<string, List<string>>> scheduleTemplate =
            new Dictionary<string, Dictionary<string, List<string>>>();
     
         public static void CreateDaySchedule()
         {
             // Call create dictionary method
+            Dictionary<string, Dictionary<string, List<string>>> test = CreateDayDictionary();
+            printSchedule();
+            
 
             // call add to dictionary method
         }
 
-        private Dictionary<string, Dictionary<string, List<string>>> CreateDayDictionary()
+        private static Dictionary<string, Dictionary<string, List<string>>> CreateDayDictionary()
         {
             // get the current day of the week
-            string currentDay = DateTime.Now.ToString();
+            string currentDay = DateTime.Now.DayOfWeek.ToString();
 
             string[] timeSlots = GenerateTimeSlots();
 
+            scheduleTemplate[currentDay] = new Dictionary<string, List<string>>();
+
+            foreach (string slot in timeSlots)
+            {
+                scheduleTemplate[currentDay][slot] = new List<string>();
+            }
+
+            return scheduleTemplate;
+
         }
 
-        private void AddEntryToDictionary()
+        // test method delete later
+        public static void printSchedule()
         {
-            //TODO
+            foreach (var dayEntry in scheduleTemplate)
+            {
+                Console.WriteLine(dayEntry.Key);
+                foreach (var periodKey in dayEntry.Value)
+                {
+                    Console.WriteLine($"  {periodKey.Key}");
+                    foreach (var task in periodKey.Value)
+                    {
+                        Console.WriteLine($"    {task}");
+                    }
+                }
+            }
         }
 
-        private string[] GenerateTimeSlots()
+        private static void AddEntryToDictionary()
+        {
+            //TODO Add Implementation
+        }
+
+        private static string[] GenerateTimeSlots()
         {
             List<string> timeSlots = new List<string>();
 
