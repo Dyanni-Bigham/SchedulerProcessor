@@ -28,11 +28,8 @@ namespace Start
             */
 
             // Testing String Helper functionality
-            string[] test = StringHelper.SplitInterval("hahahah");
-            foreach (string val in test)
-            {
-                Console.WriteLine(val);
-            }
+
+            Processor.CreateDaySchedule();
         }
     }
 }
