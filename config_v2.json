@@ -1,0 +1,36 @@
+[
+  {
+    "Days": [
+      "Monday",
+      "Friday"
+    ],
+    "Apps": [
+      "C:\\Users\\dyann\\AppData\\Local\\Programs\\Evernote\\Evernote.exe"
+    ],
+    "Interval": "00:45"
+  },
+  {
+    "Days": [
+      "Monday",
+      "Friday",
+      "Wednesday",
+      "Saturday",
+      "Sunday"
+    ],
+    "Apps": [
+      "C:\\Users\\dyann\\AppData\\Roaming\\Spotify\\Spotify.exe"
+    ],
+    "Interval": "14:15"
+  },
+  {
+    "Days": [
+      "Tuesday",
+      "Friday",
+      "Sunday"
+    ],
+    "Apps": [
+      "C:\\Users\\dyann\\AppData\\Local\\Programs\\FreeTube\\FreeTube.exe"
+    ],
+    "Interval": "07:00"
+  }
+]

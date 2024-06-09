@@ -1,4 +1,5 @@
 using System;
+using Objects;
 
 namespace Utils
 {
@@ -8,7 +9,12 @@ namespace Utils
         // Have global dictionary for the dictionary
         private static Dictionary<string, Dictionary<string, List<string>>> scheduleTemplate =
            new Dictionary<string, Dictionary<string, List<string>>>();
-    
+        private List<Entry> entries;
+
+        public Processor(List<Entry> entries)
+        {
+            this.entries = entries;
+        }
         public static void CreateDaySchedule()
         {
             // Call create dictionary method

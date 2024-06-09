@@ -20,16 +20,16 @@ namespace Start
 
             // Create an exeception class (Error)
             //Console.WriteLine("Application is starting");
-            /*
-            string filePath = "./config.json";
+            
+            string filePath = "./config_v2.json";
             FileReader reader = new FileReader(filePath);
             reader.ReadFile();
             reader.DisplayEntries();
-            */
+            
 
             // Testing String Helper functionality
 
-            Processor.CreateDaySchedule();
+            //Processor.CreateDaySchedule();
         }
     }
 }

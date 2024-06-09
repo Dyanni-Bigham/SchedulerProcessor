@@ -46,7 +46,7 @@ namespace Utils
         {
             for (int i = 0; i < this.entries.Count; i++)
             {
-                Console.WriteLine($"Element: {i}\n");
+                //Console.WriteLine($"Element: {i}\n");
                 Console.WriteLine($"Entry: {this.entries[i].ToString()}");
             }
         }
