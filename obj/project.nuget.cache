@@ -1,10 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "gr+Y17lesnk=",
+  "dgSpecHash": "NvqdhJex0qI=",
   "success": true,
-  "projectFilePath": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\SchedulerProcesser.csproj",
+  "projectFilePath": "/Users/dyannibigham/Documents/dev/SchedulerProcessor/SchedulerProcesser.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dyann\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "/Users/dyannibigham/.nuget/packages/newtonsoft.json/13.0.3/newtonsoft.json.13.0.3.nupkg.sha512"
   ],
   "logs": []
 }

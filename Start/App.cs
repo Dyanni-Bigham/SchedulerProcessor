@@ -7,7 +7,7 @@ namespace Start
     {
 
         public static void Start()
-        {   
+        {
             // Read the config file (maybe make this a class that can do that) (FileReader class)
 
             // Extract the day, time, and application (file path) ignore the timeUnit field for now (FileReader class)
@@ -20,16 +20,15 @@ namespace Start
 
             // Create an exeception class (Error)
             //Console.WriteLine("Application is starting");
-            
+
+
             string filePath = "./config_v2.json";
             FileReader reader = new FileReader(filePath);
             reader.ReadFile();
             reader.DisplayEntries();
-            
 
-            // Testing String Helper functionality
-
-            //Processor.CreateDaySchedule();
+            Processor pr = new Processor(reader.GetEntries());
+            pr.CreateDaySchedule();
         }
     }
 }
