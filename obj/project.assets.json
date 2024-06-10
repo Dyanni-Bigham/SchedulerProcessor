@@ -55,26 +55,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\dyann\\.nuget\\packages\\": {}
+    "/Users/dyannibigham/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\SchedulerProcesser.csproj",
+      "projectUniqueName": "/Users/dyannibigham/Documents/dev/SchedulerProcessor/SchedulerProcesser.csproj",
       "projectName": "SchedulerProcesser",
-      "projectPath": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\SchedulerProcesser.csproj",
-      "packagesPath": "C:\\Users\\dyann\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\obj\\",
+      "projectPath": "/Users/dyannibigham/Documents/dev/SchedulerProcessor/SchedulerProcesser.csproj",
+      "packagesPath": "/Users/dyannibigham/.nuget/packages/",
+      "outputPath": "/Users/dyannibigham/Documents/dev/SchedulerProcessor/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\dyann\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/Users/dyannibigham/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -119,7 +117,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
