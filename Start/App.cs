@@ -26,10 +26,17 @@ namespace Start
             FileReader reader = new FileReader(filePath);
             reader.ReadFile();
             reader.DisplayEntries();
-
+            
+            /*
             Processor pr = new Processor(reader.GetEntries());
             pr.CreateDaySchedule();
             pr.PrintSchedule();
+            Processor.
+            */
+            Processor.SetEntries(reader.GetEntries());
+            Processor.CreateDaySchedule();
+            Processor.PrintSchedule();
+
         }
     }
 }

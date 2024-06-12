@@ -7,23 +7,35 @@ namespace Utils
     public class Processor
     {
         // Have global dictionary for the dictionary
-        private static Dictionary<string, Dictionary<string, List<string>>> scheduleTemplate =
+        private static Dictionary<string, Dictionary<string, List<string>>> _scheduleTemplate =
            new Dictionary<string, Dictionary<string, List<string>>>();
-        private List<Entry> entries;
-        private static string currentDay;
+        private static List<Entry> _entries;
 
+        public static List<Entry> GetEntries()
+        {
+            return _entries;
+        }
+
+        public static void SetEntries(List<Entry> entries)
+        {
+            _entries = entries;
+        }
+        private static string _currentDay = DateTime.Now.DayOfWeek.ToString();
+
+        /*
         public Processor(List<Entry> entries)
         {
             this.entries = entries;
             currentDay = DateTime.Now.DayOfWeek.ToString();
         }
-        public void CreateDaySchedule()
+        */
+        public static void CreateDaySchedule()
         {
             // Call create dictionary method
             Dictionary<string, Dictionary<string, List<string>>> test = CreateDayDictionary();
 
             // call add to dictionary method
-            AddEntryToDictionary(entries);
+            AddEntryToDictionary(_entries);
         }
 
         private static Dictionary<string, Dictionary<string, List<string>>> CreateDayDictionary()
@@ -31,21 +43,21 @@ namespace Utils
 
             string[] timeSlots = GenerateTimeSlots();
 
-            scheduleTemplate[currentDay] = new Dictionary<string, List<string>>();
+            _scheduleTemplate[_currentDay] = new Dictionary<string, List<string>>();
 
             foreach (string slot in timeSlots)
             {
-                scheduleTemplate[currentDay][slot] = new List<string>();
+                _scheduleTemplate[_currentDay][slot] = new List<string>();
             }
 
-            return scheduleTemplate;
+            return _scheduleTemplate;
 
         }
 
         // test method delete later
-        public void PrintSchedule()
+        public static void PrintSchedule()
         {
-            foreach (var dayEntry in scheduleTemplate)
+            foreach (var dayEntry in _scheduleTemplate)
             {
                 Console.WriteLine(dayEntry.Key);
                 foreach (var periodKey in dayEntry.Value)
@@ -65,19 +77,19 @@ namespace Utils
             for (int i = 0; i < entries.Count; i++)
             {
                 // check that entry day is the current day
-                if (entries[i].days.Contains(currentDay))
+                if (entries[i].days.Contains(_currentDay))
                 {
                     // check that current day is in the schedule
-                    if(scheduleTemplate.ContainsKey(currentDay))
+                    if(_scheduleTemplate.ContainsKey(_currentDay))
                     {
                         // gets all of the time slots for the current day
-                        var timeSlots = scheduleTemplate[currentDay];
+                        var timeSlots = _scheduleTemplate[_currentDay];
 
                         // find the time slot in the time slots dictionary
                         if(timeSlots.ContainsKey(entries[i].interval))
                         {
                            // add the appplication to the schedule
-                           scheduleTemplate[currentDay][entries[i].interval].AddRange(entries[i].apps);
+                           _scheduleTemplate[_currentDay][entries[i].interval].AddRange(entries[i].apps);
                            //Console.WriteLine("Adding applications");
                         }
                     }
