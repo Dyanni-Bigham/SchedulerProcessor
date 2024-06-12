@@ -43,7 +43,7 @@ namespace Utils
         }
 
         // test method delete later
-        public static void printSchedule()
+        public void PrintSchedule()
         {
             foreach (var dayEntry in scheduleTemplate)
             {
@@ -76,7 +76,9 @@ namespace Utils
                         // find the time slot in the time slots dictionary
                         if(timeSlots.ContainsKey(entries[i].interval))
                         {
-                           Console.WriteLine(entries[i].interval);
+                           // add the appplication to the schedule
+                           scheduleTemplate[currentDay][entries[i].interval].AddRange(entries[i].apps);
+                           //Console.WriteLine("Adding applications");
                         }
                     }
                 }

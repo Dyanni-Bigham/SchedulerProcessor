@@ -27,7 +27,7 @@ namespace Utils
 
                     Entry newEntry = new Entry(entry.days, entry.apps, entry.interval);
                     this.entries.Add(newEntry);
-                    Console.WriteLine("Entry successfully added");
+                    //Console.WriteLine("Entry successfully added");
 
                 }
             }
@@ -47,7 +47,7 @@ namespace Utils
             for (int i = 0; i < this.entries.Count; i++)
             {
                 //Console.WriteLine($"Element: {i}\n");
-                Console.WriteLine($"Entry: {this.entries[i].ToString()}");
+                //Console.WriteLine($"Entry: {this.entries[i].ToString()}");
             }
         }
     }

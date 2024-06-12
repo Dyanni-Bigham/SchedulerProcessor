@@ -29,6 +29,7 @@ namespace Start
 
             Processor pr = new Processor(reader.GetEntries());
             pr.CreateDaySchedule();
+            pr.PrintSchedule();
         }
     }
 }
