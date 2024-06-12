@@ -11,15 +11,6 @@ namespace Utils
            new Dictionary<string, Dictionary<string, List<string>>>();
         private static List<Entry> _entries;
 
-        public static List<Entry> GetEntries()
-        {
-            return _entries;
-        }
-
-        public static void SetEntries(List<Entry> entries)
-        {
-            _entries = entries;
-        }
         private static string _currentDay = DateTime.Now.DayOfWeek.ToString();
 
         /*
@@ -29,6 +20,17 @@ namespace Utils
             currentDay = DateTime.Now.DayOfWeek.ToString();
         }
         */
+
+        public static List<Entry> GetEntries()
+        {
+            return _entries;
+        }
+
+        public static void SetEntries(List<Entry> entries)
+        {
+            _entries = entries;
+        }
+        
         public static void CreateDaySchedule()
         {
             // Call create dictionary method
@@ -54,7 +56,6 @@ namespace Utils
 
         }
 
-        // test method delete later
         public static void PrintSchedule()
         {
             foreach (var dayEntry in _scheduleTemplate)
@@ -95,11 +96,7 @@ namespace Utils
                     }
                 }
             }
-            // check that entry day is the current day
 
-            // search for entry interval in template
-
-            // assign that interval the entry app string
         }
 
         private static string[] GenerateTimeSlots()
