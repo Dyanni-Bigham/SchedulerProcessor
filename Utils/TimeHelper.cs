@@ -5,7 +5,12 @@ namespace Utils
         public static string Conver12HoursTo24Hours(DateTime time)
         {
 
-            return 
+            return time.ToString("HH:mm");
+        }
+
+        public static DateTime GetCurrentTime()
+        {
+            return DateTime.Now;
         }
     }
 }
