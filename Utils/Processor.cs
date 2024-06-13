@@ -30,6 +30,16 @@ namespace Utils
         {
             _entries = entries;
         }
+
+        public static Dictionary<string, Dictionary<string, List<string>>> GetSchedule()
+        {
+            if (_scheduleTemplate == null)
+            {
+                 return new Dictionary<string, Dictionary<string, List<string>>>();
+            }
+
+            return _scheduleTemplate;
+        }
         
         public static void CreateDaySchedule()
         {
