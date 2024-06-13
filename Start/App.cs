@@ -5,6 +5,10 @@ namespace Start
 {
     public class App
     {
+        public static bool isRunning;
+        public static string filePath = "./config_v2.json"; //TODO: change this to a dynamic value
+        public static bool haveSchedule = false;
+        public static Dictionary<string, Dictionary<string, List<string>>> schedule;
 
         public static void Start()
         {
@@ -20,16 +24,43 @@ namespace Start
 
             // Create an exeception class (Error)
             //Console.WriteLine("Application is starting");
+            isRunning = true; // this will be an argument passed from the client
 
+            DateTime currentTime;
 
-            string filePath = "./config_v2.json";
-            FileReader.SetFilePath(filePath);
-            FileReader.ReadFile();
+            while (isRunning)
+            {
+                if (!haveSchedule)
+                {
+                    // Get the config file data
+                    filePath = "./config_v2.json"; //TODO: change this to a dynamic value
+                    FileReader.SetFilePath(filePath);
+                    FileReader.ReadFile();
 
-            Processor.SetEntries(FileReader.GetEntries());
-            Processor.CreateDaySchedule();
-            Processor.PrintSchedule();
+                    // Create the schedule
+                    Processor.SetEntries(FileReader.GetEntries());
+                    Processor.CreateDaySchedule();
+                    schedule = Processor.GetSchedule();
+                    haveSchedule = true;
+                }
 
+            }
+
+            
+            /* Use this to convert user's machine time to 24 hour clock
+            DateTime d = DateTime.Now;
+            var res = d.ToString("HH:mm");
+            Console.WriteLine(res);
+            */ 
+
+            /*
+                            // get the current time method
+                currentTime = TimeHelper.GetCurrentTime();
+                
+                // call convert to 24 hours method
+
+                // 
+                */
         }
     }
 }
