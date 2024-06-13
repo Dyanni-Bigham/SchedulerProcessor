@@ -27,6 +27,7 @@ namespace Start
             isRunning = true; // this will be an argument passed from the client
 
             DateTime currentTime;
+            string timeToSearch;
 
             while (isRunning)
             {
@@ -44,23 +45,17 @@ namespace Start
                     haveSchedule = true;
                 }
 
-            }
-
-            
-            /* Use this to convert user's machine time to 24 hour clock
-            DateTime d = DateTime.Now;
-            var res = d.ToString("HH:mm");
-            Console.WriteLine(res);
-            */ 
-
-            /*
-                            // get the current time method
+                // Get the current time
                 currentTime = TimeHelper.GetCurrentTime();
-                
-                // call convert to 24 hours method
 
-                // 
-                */
+                // call convert to 24 hours method
+                timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
+
+                // pass the time into the execute file method
+                Processor.RunSchedule(timeToSearch);
+
+                // sleep until next interval
+            }
         }
     }
 }

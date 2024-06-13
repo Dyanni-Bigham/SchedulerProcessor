@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using Objects;
 
 namespace Utils
@@ -6,20 +7,11 @@ namespace Utils
 
     public class Processor
     {
-        // Have global dictionary for the dictionary
         private static Dictionary<string, Dictionary<string, List<string>>> _scheduleTemplate =
            new Dictionary<string, Dictionary<string, List<string>>>();
         private static List<Entry> _entries;
 
         private static string _currentDay = DateTime.Now.DayOfWeek.ToString();
-
-        /*
-        public Processor(List<Entry> entries)
-        {
-            this.entries = entries;
-            currentDay = DateTime.Now.DayOfWeek.ToString();
-        }
-        */
 
         public static List<Entry> GetEntries()
         {
@@ -43,10 +35,8 @@ namespace Utils
         
         public static void CreateDaySchedule()
         {
-            // Call create dictionary method
             Dictionary<string, Dictionary<string, List<string>>> test = CreateDayDictionary();
 
-            // call add to dictionary method
             AddEntryToDictionary(_entries);
         }
 
@@ -84,24 +74,17 @@ namespace Utils
 
         private static void AddEntryToDictionary(List<Entry> entries)
         {
-            // Assuming the entries will share the same schedule
             for (int i = 0; i < entries.Count; i++)
             {
-                // check that entry day is the current day
                 if (entries[i].days.Contains(_currentDay))
                 {
-                    // check that current day is in the schedule
                     if(_scheduleTemplate.ContainsKey(_currentDay))
                     {
-                        // gets all of the time slots for the current day
                         var timeSlots = _scheduleTemplate[_currentDay];
 
-                        // find the time slot in the time slots dictionary
                         if(timeSlots.ContainsKey(entries[i].interval))
                         {
-                           // add the appplication to the schedule
                            _scheduleTemplate[_currentDay][entries[i].interval].AddRange(entries[i].apps);
-                           //Console.WriteLine("Adding applications");
                         }
                     }
                 }
@@ -121,8 +104,34 @@ namespace Utils
                 }
             }
 
-            // return time slots
             return timeSlots.ToArray();
         }
+
+        private static void ExecuteApp(List<string> appName)
+        {
+            try
+            {
+                Process.Start(appName[0]);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error executing file: " + ex.Message);
+            }
+        }
+
+        public static void RunSchedule(string time)
+        {
+            // search the nested dictionary for the time
+            var listOfTimes = _scheduleTemplate[_currentDay];
+
+            // search for time in list of times
+            if (listOfTimes.ContainsKey(time))
+            {
+                // execute the app
+                ExecuteApp(listOfTimes[time]);
+            }
+
+        }
     }
+
 }
