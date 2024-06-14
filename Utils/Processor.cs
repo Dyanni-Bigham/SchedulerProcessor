@@ -20,6 +20,7 @@ namespace Utils
 
         public static void SetEntries(List<Entry> entries)
         {
+            Console.WriteLine("Processor is now picking up entries");
             _entries = entries;
         }
 
@@ -27,9 +28,11 @@ namespace Utils
         {
             if (_scheduleTemplate == null)
             {
+                Console.WriteLine("Schedule was not created successfully");
                  return new Dictionary<string, Dictionary<string, List<string>>>();
             }
 
+            Console.WriteLine("Returning the schedule for processing");
             return _scheduleTemplate;
         }
         
@@ -51,6 +54,7 @@ namespace Utils
             {
                 _scheduleTemplate[_currentDay][slot] = new List<string>();
             }
+            Console.WriteLine("Schedule has been created with the entries");
 
             return _scheduleTemplate;
 
@@ -128,6 +132,7 @@ namespace Utils
             if (listOfTimes.ContainsKey(time))
             {
                 // execute the app
+                Console.WriteLine("Executing the application");
                 ExecuteApp(listOfTimes[time]);
             }
 

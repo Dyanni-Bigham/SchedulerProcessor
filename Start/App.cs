@@ -23,7 +23,7 @@ namespace Start
                 // Create a class that will handle the processing (Processor class)
 
             // Create an exeception class (Error)
-            //Console.WriteLine("Application is starting");
+            Console.WriteLine("Application is starting");
             isRunning = true; // this will be an argument passed from the client
 
             DateTime currentTime;
@@ -33,16 +33,7 @@ namespace Start
             {
                 if (!haveSchedule)
                 {
-                    // Get the config file data
-                    filePath = "./config_v2.json"; //TODO: change this to a dynamic value
-                    FileReader.SetFilePath(filePath);
-                    FileReader.ReadFile();
-
-                    // Create the schedule
-                    Processor.SetEntries(FileReader.GetEntries());
-                    Processor.CreateDaySchedule();
-                    schedule = Processor.GetSchedule();
-                    haveSchedule = true;
+                    LoadSchedule();
                 }
 
                 // Get the current time
@@ -50,11 +41,34 @@ namespace Start
 
                 // call convert to 24 hours method
                 timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
+                Console.WriteLine(timeToSearch);
 
                 // pass the time into the execute file method
                 Processor.RunSchedule(timeToSearch);
 
                 // sleep until next interval
+                TimeHelper.SleepUntilNextInterval();
+            }
+        }
+
+        private static void LoadSchedule()
+        {
+            try
+            {
+                Console.WriteLine("Loading schedule from config file...");
+                FileReader.SetFilePath(filePath);
+                FileReader.ReadFile();
+
+                Processor.SetEntries(FileReader.GetEntries());
+                Processor.CreateDaySchedule();
+                schedule = Processor.GetSchedule();
+                haveSchedule = true;
+                Console.WriteLine("Schedule loaded successfully...");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error loading schedule: {ex.Message}");
+                isRunning = false; // will stop the loop
             }
         }
     }
