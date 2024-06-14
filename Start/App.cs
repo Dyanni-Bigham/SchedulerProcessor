@@ -33,7 +33,7 @@ namespace Start
             {
                 if (!haveSchedule)
                 {
-                    LoadSchedule();
+                    InitializeSchedule();
                 }
 
                 // Get the current time
@@ -51,7 +51,7 @@ namespace Start
             }
         }
 
-        private static void LoadSchedule()
+        private static void InitializeSchedule()
         {
             try
             {
