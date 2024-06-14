@@ -12,6 +12,32 @@ namespace Utils
         {
             return DateTime.Now;
         }
+
+        public static void SleepUntilNextInterval()
+        {
+            DateTime now = DateTime.Now.Date;
+
+            int nextIntervalMinute = (now.Minute / 15 + 1) * 15 % 60;
+            int nextIntervalHour = now.Hour;
+
+            if (nextIntervalMinute == 0)
+            {
+                nextIntervalHour = (now.Hour + 1) % 24;
+            }
+
+            DateTime nextIntervalTime = 
+                new DateTime(now.Year, now.Month, now.Day, nextIntervalHour, nextIntervalMinute, 0);
+
+            if (nextIntervalTime <= hour)
+            {
+                nextIntervalTime = nextIntervalTime.AddHours(1);
+                nextIntervalTime = nextIntervalTime.AddMinutes(-nextIntervalTime.Minute);
+            }
+
+            TimeSpan sleepDuration = nextIntervalTime - now;
+
+            Thread.Sleep(sleepDuration);
+        }
     }
 }
 
