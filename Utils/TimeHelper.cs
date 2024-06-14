@@ -4,12 +4,14 @@ namespace Utils
     {
         public static string Conver12HoursTo24Hours(DateTime time)
         {
+            Console.WriteLine("Converting time from 12 clock to 24 clock");
 
             return time.ToString("HH:mm");
         }
 
         public static DateTime GetCurrentTime()
         {
+            Console.WriteLine("Getting current time");
             return DateTime.Now;
         }
 
@@ -28,14 +30,16 @@ namespace Utils
             DateTime nextIntervalTime = 
                 new DateTime(now.Year, now.Month, now.Day, nextIntervalHour, nextIntervalMinute, 0);
 
-            if (nextIntervalTime <= hour)
+            if (nextIntervalTime <= now)
             {
                 nextIntervalTime = nextIntervalTime.AddHours(1);
                 nextIntervalTime = nextIntervalTime.AddMinutes(-nextIntervalTime.Minute);
             }
 
             TimeSpan sleepDuration = nextIntervalTime - now;
-
+            
+            Console.WriteLine(sleepDuration);
+            Console.WriteLine("Sleeping for 15 minutes");
             Thread.Sleep(sleepDuration);
         }
     }

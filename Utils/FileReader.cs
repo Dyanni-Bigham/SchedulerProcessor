@@ -25,6 +25,7 @@ namespace Utils
 
         public static void SetFilePath(string filePath)
         {
+            Console.WriteLine("Setting the file path");
             _filePath = filePath;
         }
 
@@ -52,6 +53,7 @@ namespace Utils
                     //Console.WriteLine("Entry successfully added");
 
                 }
+                Console.WriteLine("entries have been read from file");
             }
             else
             {
