@@ -15,6 +15,7 @@ namespace Utils
             return DateTime.Now;
         }
 
+
         public static void SleepUntilNextInterval()
         {
             DateTime now = DateTime.Now.Date;
