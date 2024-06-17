@@ -15,6 +15,29 @@ namespace Utils
             return DateTime.Now;
         }
 
+        public static bool IsValidInterval(DateTime time)
+        {
+            //DateTime date = DateTime.Parse(time, System.Globalization.CultureInfo.InvariantCulture);
+            int minutes = time.Minute;
+            
+            return minutes == 0 || minutes == 15 || minutes == 30 || minutes == 45;
+        }
+
+        public static DateTime AdjustTime(DateTime time)
+        {
+            int minutes = time.Minute;
+            int nextInterval  = ((minutes / 15) + 1) % 15;
+            int minutAdjustment = nextInterval - minutes;
+
+            if (nextInterval == 60)
+            {
+                return new DateTime(time.Year, time.Month, time.Day,time.Hour, 0, 0).AddHours(1);
+            }
+            else
+            {
+                return time.AddMinutes(minutAdjustment);
+            }
+        }
 
         public static void SleepUntilNextInterval()
         {
