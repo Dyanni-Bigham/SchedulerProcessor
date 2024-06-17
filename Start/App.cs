@@ -40,18 +40,15 @@ namespace Start
                 currentTime = TimeHelper.GetCurrentTime();
 
                 // check if time has a valid interval 00, 15, 30, 45
-
-                // if not a valid time call correct interval method
-
-                // if it is a valid time continue with default flow
-
-                // call convert to 24 hours method
-                timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
-                Console.WriteLine(timeToSearch);
-
-                // pass the time into the execute file method
-                Processor.RunSchedule(timeToSearch);
-
+                if(!TimeHelper.IsValidInterval(currentTime))
+                {
+                    // Implement reworked inverval logic
+                }
+                else
+                {
+                    timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
+                    Processor.RunSchedule(timeToSearch);
+                }
                 // sleep until next interval
                 TimeHelper.SleepUntilNextInterval();
             }
