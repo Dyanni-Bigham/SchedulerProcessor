@@ -39,6 +39,12 @@ namespace Start
                 // Get the current time
                 currentTime = TimeHelper.GetCurrentTime();
 
+                // check if time has a valid interval 00, 15, 30, 45
+
+                // if not a valid time call correct interval method
+
+                // if it is a valid time continue with default flow
+
                 // call convert to 24 hours method
                 timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
                 Console.WriteLine(timeToSearch);
@@ -69,6 +75,19 @@ namespace Start
             {
                 Console.WriteLine($"Error loading schedule: {ex.Message}");
                 isRunning = false; // will stop the loop
+            }
+        }
+
+        public static void TestMethod()
+        {
+            DateTime currentTime = TimeHelper.GetCurrentTime();
+            if(!TimeHelper.IsValidInterval(currentTime))
+            {
+                Console.WriteLine("Time is not a valid interval");
+            }
+            else
+            {
+                Console.WriteLine("Time is a valid interal");
             }
         }
     }
