@@ -80,7 +80,9 @@ namespace Start
             DateTime currentTime = TimeHelper.GetCurrentTime();
             if(!TimeHelper.IsValidInterval(currentTime))
             {
-                Console.WriteLine("Time is not a valid interval");
+                DateTime adjustedInterval = TimeHelper.AdjustTime(currentTime);
+                int sleepDuration = adjustedInterval.Minute - currentTime.Minute;
+                Console.WriteLine(sleepDuration);
             }
             else
             {
