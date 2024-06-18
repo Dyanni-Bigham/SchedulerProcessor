@@ -26,8 +26,8 @@ namespace Utils
         public static DateTime AdjustTime(DateTime time)
         {
             int minutes = time.Minute;
-            int nextInterval  = ((minutes / 15) + 1) % 15;
-            int minutAdjustment = nextInterval - minutes;
+            int nextInterval  = ((minutes / 15) + 1) * 15;
+            //int minutAdjustment = nextInterval - minutes;
 
             if (nextInterval == 60)
             {
@@ -35,7 +35,8 @@ namespace Utils
             }
             else
             {
-                return time.AddMinutes(minutAdjustment);
+                return new DateTime(time.Year, time.Month, time.Day, time.Hour, nextInterval, 0);
+
             }
         }
 
