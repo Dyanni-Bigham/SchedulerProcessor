@@ -67,6 +67,13 @@ namespace Utils
             Console.WriteLine("Sleeping for 15 minutes");
             Thread.Sleep(sleepDuration);
         }
+
+        public static void SleepUntilNextInterval(DateTime adjustedInterval, DateTime currentTime)
+        {
+            TimeSpan sleepDuration = adjustedInterval - currentTime;
+            //Console.WriteLine(sleepDuration);
+            Thread.Sleep(sleepDuration);
+        }
     }
 }
 

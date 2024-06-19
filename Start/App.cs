@@ -42,15 +42,16 @@ namespace Start
                 // check if time has a valid interval 00, 15, 30, 45
                 if(!TimeHelper.IsValidInterval(currentTime))
                 {
-                    // Implement reworked inverval logic
+                    DateTime adjustedInterval = TimeHelper.AdjustTime(currentTime);
+                    Console.WriteLine("Sleeping");
+                    TimeHelper.SleepUntilNextInterval(adjustedInterval, currentTime);
                 }
                 else
                 {
                     timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
                     Processor.RunSchedule(timeToSearch);
+                    TimeHelper.SleepUntilNextInterval();
                 }
-                // sleep until next interval
-                TimeHelper.SleepUntilNextInterval();
             }
         }
 
@@ -81,8 +82,7 @@ namespace Start
             if(!TimeHelper.IsValidInterval(currentTime))
             {
                 DateTime adjustedInterval = TimeHelper.AdjustTime(currentTime);
-                int sleepDuration = adjustedInterval.Minute - currentTime.Minute;
-                Console.WriteLine(sleepDuration);
+                TimeHelper.SleepUntilNextInterval(adjustedInterval, currentTime);
             }
             else
             {
