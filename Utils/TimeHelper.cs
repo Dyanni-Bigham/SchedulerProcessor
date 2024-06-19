@@ -63,8 +63,8 @@ namespace Utils
 
             TimeSpan sleepDuration = nextIntervalTime - now;
             
-            Console.WriteLine(sleepDuration);
-            Console.WriteLine("Sleeping for 15 minutes");
+            //Console.WriteLine(sleepDuration);
+            Console.WriteLine("Sleeping for 15 minutes\n");
             Thread.Sleep(sleepDuration);
         }
 

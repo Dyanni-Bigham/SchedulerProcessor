@@ -115,7 +115,8 @@ namespace Utils
         {
             try
             {
-                Process.Start(appName[0]);
+                //Process.Start(appName[0]);
+                Console.WriteLine($"Executing the application {appName[0]}");
             }
             catch (Exception ex)
             {

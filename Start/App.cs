@@ -67,7 +67,7 @@ namespace Start
                 Processor.CreateDaySchedule();
                 schedule = Processor.GetSchedule();
                 haveSchedule = true;
-                Console.WriteLine("Schedule loaded successfully...");
+                Console.WriteLine("Schedule loaded successfully...\n");
             }
             catch (Exception ex)
             {
