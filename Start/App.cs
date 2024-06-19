@@ -43,11 +43,12 @@ namespace Start
                 if(!TimeHelper.IsValidInterval(currentTime))
                 {
                     DateTime adjustedInterval = TimeHelper.AdjustTime(currentTime);
-                    Console.WriteLine("Sleeping");
+                    Console.WriteLine("Adjusted time. sleeping until correct 15 minute interval\n");
                     TimeHelper.SleepUntilNextInterval(adjustedInterval, currentTime);
                 }
                 else
                 {
+                    Console.WriteLine("Correct 15 minute interval. Application starting soon...\n");
                     timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
                     Processor.RunSchedule(timeToSearch);
                     TimeHelper.SleepUntilNextInterval();
