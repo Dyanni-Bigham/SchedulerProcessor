@@ -9,8 +9,8 @@ namespace Start
             // Call the App class that will start the program
 
             // TODO Get run/pause command arguments from the client
-            //App.Start();
-            App.TestMethod();
+            App.Start();
+            //App.TestMethod();
             
         }
     }
