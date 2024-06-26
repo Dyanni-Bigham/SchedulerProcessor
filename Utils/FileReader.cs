@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Log;
 using Newtonsoft.Json;
 using Objects;
 
@@ -25,7 +26,8 @@ namespace Utils
 
         public static void SetFilePath(string filePath)
         {
-            Console.WriteLine("Setting the file path");
+            //Console.WriteLine("Setting the file path");
+            Logger.Log("Setting the file path");
             _filePath = filePath;
         }
 
@@ -53,11 +55,13 @@ namespace Utils
                     //Console.WriteLine("Entry successfully added");
 
                 }
-                Console.WriteLine("entries have been read from file");
+                //Console.WriteLine("entries have been read from file");
+                Logger.Log("entries have been read from file");
             }
             else
             {
-                Console.WriteLine("File Not Found...");
+                //Console.WriteLine("File Not Found...");
+                Logger.Log("File Not Found...");
             }
         }
         
