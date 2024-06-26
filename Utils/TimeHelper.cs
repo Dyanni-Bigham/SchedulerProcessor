@@ -1,17 +1,21 @@
+using Log;
+
 namespace Utils
 {
     public class TimeHelper
     {
         public static string Conver12HoursTo24Hours(DateTime time)
         {
-            Console.WriteLine("Converting time from 12 clock to 24 clock");
+            //Console.WriteLine("Converting time from 12 clock to 24 clock");
+            Logger.Log("Converting time from 12 clock to 24 clock");
 
             return time.ToString("HH:mm");
         }
 
         public static DateTime GetCurrentTime()
         {
-            Console.WriteLine($"Getting current time {DateTime.Now}");
+            //Console.WriteLine($"Getting current time {DateTime.Now}");
+            Logger.Log($"Getting current time {DateTime.Now}");
             return DateTime.Now;
         }
 
@@ -64,7 +68,8 @@ namespace Utils
             TimeSpan sleepDuration = nextIntervalTime - now;
             
             //Console.WriteLine(sleepDuration);
-            Console.WriteLine("Sleeping for 15 minutes\n");
+            //Console.WriteLine("Sleeping for 15 minutes\n");
+            Logger.Log("Sleeping for 15 minutes\n");
             Thread.Sleep(sleepDuration);
         }
 
@@ -76,9 +81,3 @@ namespace Utils
         }
     }
 }
-
-/*
-DateTime d = new DateTime(1, 1, 1, 23, 12, 0);
-var res = d.ToString("hh:mm tt"); // this shows 11:12 PM
-var res2 = d.ToString("HH:mm");   // this shows 23:12
-*/

@@ -1,4 +1,5 @@
 using System;
+using Log;
 using Utils;
 
 namespace Start
@@ -23,7 +24,8 @@ namespace Start
                 // Create a class that will handle the processing (Processor class)
 
             // Create an exeception class (Error)
-            Console.WriteLine("Application is starting");
+            //Console.WriteLine("Application is starting");
+            Logger.Log("Application is starting");
             isRunning = true; // this will be an argument passed from the client
 
             DateTime currentTime;
@@ -43,24 +45,29 @@ namespace Start
                 if(!TimeHelper.IsValidInterval(currentTime))
                 {
                     DateTime adjustedInterval = TimeHelper.AdjustTime(currentTime);
-                    Console.WriteLine("Adjusted time. sleeping until correct 15 minute interval\n");
+                    //Console.WriteLine("Adjusted time. sleeping until correct 15 minute interval\n");
+                    Logger.Log("Adjusted time. sleeping until correct 15 minute interval\n");
                     TimeHelper.SleepUntilNextInterval(adjustedInterval, currentTime);
                 }
                 else
                 {
-                    Console.WriteLine("Correct 15 minute interval. Application starting soon...\n");
+                    //Console.WriteLine("Correct 15 minute interval. Application starting soon...\n");
+                    Logger.Log("Correct 15 minute interval. Application starting soon...\n");
                     timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
                     Processor.RunSchedule(timeToSearch);
                     TimeHelper.SleepUntilNextInterval();
                 }
             }
+
+            Logger.Close();
         }
 
         private static void InitializeSchedule()
         {
             try
             {
-                Console.WriteLine("Loading schedule from config file...");
+                //Console.WriteLine("Loading schedule from config file...");
+                Logger.Log("Loading schedule from config file...");
                 FileReader.SetFilePath(filePath);
                 FileReader.ReadFile();
 
@@ -68,26 +75,14 @@ namespace Start
                 Processor.CreateDaySchedule();
                 schedule = Processor.GetSchedule();
                 haveSchedule = true;
-                Console.WriteLine("Schedule loaded successfully...\n");
+                //Console.WriteLine("Schedule loaded successfully...\n");
+                Logger.Log("Schedule loaded successfully...\n");
             }
             catch (Exception ex)
             {
-                Console.WriteLine($"Error loading schedule: {ex.Message}");
+                //Console.WriteLine($"Error loading schedule: {ex.Message}");
+                Logger.Log($"Error loading schedule: {ex.Message}");
                 isRunning = false; // will stop the loop
-            }
-        }
-
-        public static void TestMethod()
-        {
-            DateTime currentTime = TimeHelper.GetCurrentTime();
-            if(!TimeHelper.IsValidInterval(currentTime))
-            {
-                DateTime adjustedInterval = TimeHelper.AdjustTime(currentTime);
-                TimeHelper.SleepUntilNextInterval(adjustedInterval, currentTime);
-            }
-            else
-            {
-                Console.WriteLine("Time is a valid interal");
             }
         }
     }

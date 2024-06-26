@@ -1,5 +1,6 @@
 using System;
 using System.Diagnostics;
+using Log;
 using Objects;
 
 namespace Utils
@@ -20,7 +21,8 @@ namespace Utils
 
         public static void SetEntries(List<Entry> entries)
         {
-            Console.WriteLine("Processor is now picking up entries");
+           //Console.WriteLine("Processor is now picking up entries");
+           Logger.Log("Processor is now picking up entries");
             _entries = entries;
         }
 
@@ -28,11 +30,13 @@ namespace Utils
         {
             if (_scheduleTemplate == null)
             {
-                Console.WriteLine("Schedule was not created successfully");
+                //Console.WriteLine("Schedule was not created successfully");
+                Logger.Log("Schedule was not created successfully");
                  return new Dictionary<string, Dictionary<string, List<string>>>();
             }
 
-            Console.WriteLine("Returning the schedule for processing");
+           // Console.WriteLine("Returning the schedule for processing");
+            Logger.Log("Returning the schedule for processing");
             return _scheduleTemplate;
         }
         
@@ -54,7 +58,8 @@ namespace Utils
             {
                 _scheduleTemplate[_currentDay][slot] = new List<string>();
             }
-            Console.WriteLine("Schedule has been created with the entries");
+            //Console.WriteLine("Schedule has been created with the entries");
+            Logger.Log("Schedule has been created with the entries");
 
             return _scheduleTemplate;
 
@@ -64,13 +69,16 @@ namespace Utils
         {
             foreach (var dayEntry in _scheduleTemplate)
             {
-                Console.WriteLine(dayEntry.Key);
+                //Console.WriteLine(dayEntry.Key);
+                Logger.Log(dayEntry.Key);
                 foreach (var periodKey in dayEntry.Value)
                 {
-                    Console.WriteLine($"  {periodKey.Key}");
+                    //Console.WriteLine($"  {periodKey.Key}");
+                    Logger.Log($"  {periodKey.Key}");
                     foreach (var task in periodKey.Value)
                     {
-                        Console.WriteLine($"    {task}");
+                        //Console.WriteLine($"    {task}");
+                        Logger.Log($"    {task}");
                     }
                 }
             }
@@ -115,13 +123,14 @@ namespace Utils
         {
             try
             {
-                Console.WriteLine($"Executing the application {appName[0]}");
+                //Console.WriteLine($"Executing the application {appName[0]}");
+                Logger.Log($"Executing the application {appName[0]}");
                 Process.Start(appName[0]);
             }
             catch (Exception ex)
             {
-                //Console.WriteLine("Error executing file: " + ex.Message);
-                Console.WriteLine("Application doesn't exist for interval");
+                //Console.WriteLine("Application doesn't exist for interval");
+                Logger.Log("Application doesn't exist for interval");
             }
         }
 
@@ -134,7 +143,8 @@ namespace Utils
             if (listOfTimes.ContainsKey(time))
             {
                 // execute the app
-                Console.WriteLine("Executing the application");
+                //Console.WriteLine("Executing the application");
+                Logger.Log("Executing the application");
                 ExecuteApp(listOfTimes[time]);
             }
 
