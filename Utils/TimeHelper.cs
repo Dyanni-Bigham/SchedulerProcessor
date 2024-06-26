@@ -11,7 +11,7 @@ namespace Utils
 
         public static DateTime GetCurrentTime()
         {
-            Console.WriteLine("Getting current time");
+            Console.WriteLine($"Getting current time {DateTime.Now}");
             return DateTime.Now;
         }
 
