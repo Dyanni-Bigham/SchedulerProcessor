@@ -11,22 +11,11 @@ namespace Start
         public static bool haveSchedule = false;
         public static Dictionary<string, Dictionary<string, List<string>>> schedule;
 
-        public static void Start()
+        public static void Start(bool isRunning)
         {
-            // Read the config file (maybe make this a class that can do that) (FileReader class)
-
-            // Extract the day, time, and application (file path) ignore the timeUnit field for now (FileReader class)
-
-            // have a flag called IsRunning this will be triggered by the context memu in the UI
-
-                // This will be a while loop that will constantly run the scheduling logic
-
-                // Create a class that will handle the processing (Processor class)
-
-            // Create an exeception class (Error)
             //Console.WriteLine("Application is starting");
             Logger.Log("Application is starting");
-            isRunning = true; // this will be an argument passed from the client
+            //isRunning = true; // this will be an argument passed from the client
 
             DateTime currentTime;
             string timeToSearch;
