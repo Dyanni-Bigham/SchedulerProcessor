@@ -1,4 +1,5 @@
 using System;
+using Log;
 
 namespace Start
 {
@@ -9,7 +10,9 @@ namespace Start
             // Call the App class that will start the program
 
             // TODO Get run/pause command arguments from the client
-            App.Start(bool.Parse(args[0]));
+            Console.WriteLine("Starting main application...");
+            //Console.WriteLine(args[0]);
+            App.Start(bool.Parse("true"));
             //App.TestMethod();
             
         }
