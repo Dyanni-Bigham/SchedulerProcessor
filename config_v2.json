@@ -22,7 +22,7 @@
     "Apps": [
       "C:\\Users\\dyann\\AppData\\Roaming\\Spotify\\Spotify.exe"
     ],
-    "Interval": "21:15"
+    "Interval": "20:45"
   },
   {
     "Days": [
@@ -30,11 +30,12 @@
       "Monday",
       "Thursday",
       "Friday",
+      "Saturday",
       "Sunday"
     ],
     "Apps": [
       "C:\\Users\\dyann\\AppData\\Local\\Programs\\FreeTube\\FreeTube.exe"
     ],
-    "Interval": "21:45"
+    "Interval": "21:00"
   }
 ]
