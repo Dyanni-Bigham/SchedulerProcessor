@@ -8,7 +8,7 @@
     "Apps": [
       "C:\\Users\\dyann\\AppData\\Local\\Programs\\Evernote\\Evernote.exe"
     ],
-    "Interval": "16:45"
+    "Interval": "17:45"
   },
   {
     "Days": [
@@ -22,19 +22,20 @@
     "Apps": [
       "C:\\Users\\dyann\\AppData\\Roaming\\Spotify\\Spotify.exe"
     ],
-    "Interval": "21:15"
+    "Interval": "18:00"
   },
   {
     "Days": [
-      "Wednesday",
+      "Tuesday",
       "Monday",
       "Thursday",
       "Friday",
+      "Saturday",
       "Sunday"
     ],
     "Apps": [
       "C:\\Users\\dyann\\AppData\\Local\\Programs\\FreeTube\\FreeTube.exe"
     ],
-    "Interval": "21:45"
+    "Interval": "21:00"
   }
 ]

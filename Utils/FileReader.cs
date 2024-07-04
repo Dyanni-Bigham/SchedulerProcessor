@@ -28,7 +28,10 @@ namespace Utils
         {
             //Console.WriteLine("Setting the file path");
             Logger.Log("Setting the file path");
-            _filePath = filePath;
+            //_filePath = filePath;
+            string currDirectory = AppDomain.CurrentDomain.BaseDirectory;
+            _filePath = Path.Combine(currDirectory, filePath);
+            Logger.Log($"I am trying read this file: {_filePath}");
         }
 
         public static List<Entry> GetEntries()

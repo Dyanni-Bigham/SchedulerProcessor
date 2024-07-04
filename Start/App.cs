@@ -7,49 +7,44 @@ namespace Start
     public class App
     {
         public static bool isRunning;
-        public static string filePath = "./config_v2.json"; //TODO: change this to a dynamic value
+        public static string filePath = "config_v2.json"; //TODO: change this to a dynamic value
         public static bool haveSchedule = false;
         public static Dictionary<string, Dictionary<string, List<string>>> schedule;
 
-        public static void Start(bool isRunning)
+    public static void Start(bool isRunning, CancellationToken token)
+    {
+        Logger.Log("Application is starting");
+
+        DateTime currentTime;
+        string timeToSearch;
+
+        while (isRunning && !token.IsCancellationRequested)
         {
-            //Console.WriteLine("Application is starting");
-            Logger.Log("Application is starting");
-            //isRunning = true; // this will be an argument passed from the client
-
-            DateTime currentTime;
-            string timeToSearch;
-
-            while (isRunning)
+            if (!haveSchedule)
             {
-                if (!haveSchedule)
-                {
-                    InitializeSchedule();
-                }
-
-                // Get the current time
-                currentTime = TimeHelper.GetCurrentTime();
-
-                // check if time has a valid interval 00, 15, 30, 45
-                if(!TimeHelper.IsValidInterval(currentTime))
-                {
-                    DateTime adjustedInterval = TimeHelper.AdjustTime(currentTime);
-                    //Console.WriteLine("Adjusted time. sleeping until correct 15 minute interval\n");
-                    Logger.Log("Adjusted time. sleeping until correct 15 minute interval\n");
-                    TimeHelper.SleepUntilNextInterval(adjustedInterval, currentTime);
-                }
-                else
-                {
-                    //Console.WriteLine("Correct 15 minute interval. Application starting soon...\n");
-                    Logger.Log("Correct 15 minute interval. Application starting soon...\n");
-                    timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
-                    Processor.RunSchedule(timeToSearch);
-                    TimeHelper.SleepUntilNextInterval();
-                }
+                InitializeSchedule();
             }
 
-            Logger.Close();
+            currentTime = TimeHelper.GetCurrentTime();
+
+            if (!TimeHelper.IsValidInterval(currentTime))
+            {
+                DateTime adjustedInterval = TimeHelper.AdjustTime(currentTime);
+                Logger.Log("Adjusted time. sleeping until correct 15 minute interval\n");
+                TimeHelper.SleepUntilNextInterval(adjustedInterval, currentTime);
+            }
+            else
+            {
+                Logger.Log("Correct 15 minute interval. Application starting soon...\n");
+                timeToSearch = TimeHelper.Conver12HoursTo24Hours(currentTime);
+                Processor.RunSchedule(timeToSearch);
+                TimeHelper.SleepUntilNextInterval();
+            }
         }
+
+        Logger.Close();
+        System.Environment.Exit(0);
+    }
 
         private static void InitializeSchedule()
         {
