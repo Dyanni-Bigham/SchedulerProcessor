@@ -7,7 +7,7 @@ namespace Start
     public class App
     {
         public static bool isRunning;
-        public static string filePath = "config_v2.json"; //TODO: change this to a dynamic value
+        public static string filePath = "config.json"; //TODO: change this to a dynamic value
         public static bool haveSchedule = false;
         public static Dictionary<string, Dictionary<string, List<string>>> schedule;
 
