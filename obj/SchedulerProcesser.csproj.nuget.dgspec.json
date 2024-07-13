@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\SchedulerProcesser.csproj": {}
+    "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcessor\\SchedulerProcessor.csproj": {}
   },
   "projects": {
-    "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\SchedulerProcesser.csproj": {
+    "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcessor\\SchedulerProcessor.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\SchedulerProcesser.csproj",
-        "projectName": "SchedulerProcesser",
-        "projectPath": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\SchedulerProcesser.csproj",
+        "projectUniqueName": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcessor\\SchedulerProcessor.csproj",
+        "projectName": "SchedulerProcessor",
+        "projectPath": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcessor\\SchedulerProcessor.csproj",
         "packagesPath": "C:\\Users\\dyann\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\obj\\",
+        "outputPath": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcessor\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\dyann\\AppData\\Roaming\\NuGet\\NuGet.Config",
