@@ -10,14 +10,6 @@ namespace Utils
     {
         private static string _filePath;
         private static List<Entry> _entries = new List<Entry>();
-        // Create a constructor where it takes in a filepath to the config file
-        /* 
-        public FileReader(string path)
-        {
-            this.filePath = path;
-            this.entries = new List<Entry>();
-        }
-        */
 
         public static string GetFilePath()
         {
@@ -26,9 +18,7 @@ namespace Utils
 
         public static void SetFilePath(string filePath)
         {
-            //Console.WriteLine("Setting the file path");
             Logger.Log("Setting the file path");
-            //_filePath = filePath;
             string currDirectory = AppDomain.CurrentDomain.BaseDirectory;
             _filePath = Path.Combine(currDirectory, filePath);
             Logger.Log($"I am trying read this file: {_filePath}");
@@ -55,15 +45,12 @@ namespace Utils
 
                     Entry newEntry = new Entry(entry.days, entry.apps, entry.interval);
                     _entries.Add(newEntry);
-                    //Console.WriteLine("Entry successfully added");
 
                 }
-                //Console.WriteLine("entries have been read from file");
                 Logger.Log("entries have been read from file");
             }
             else
             {
-                //Console.WriteLine("File Not Found...");
                 Logger.Log("File Not Found...");
             }
         }

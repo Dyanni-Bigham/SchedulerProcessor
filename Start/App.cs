@@ -7,7 +7,7 @@ namespace Start
     public class App
     {
         public static bool isRunning;
-        public static string filePath = "config.json"; //TODO: change this to a dynamic value
+        public static string filePath = "config.json";
         public static bool haveSchedule = false;
         public static Dictionary<string, Dictionary<string, List<string>>> schedule;
 
@@ -50,7 +50,6 @@ namespace Start
         {
             try
             {
-                //Console.WriteLine("Loading schedule from config file...");
                 Logger.Log("Loading schedule from config file...");
                 FileReader.SetFilePath(filePath);
                 FileReader.ReadFile();
@@ -59,12 +58,10 @@ namespace Start
                 Processor.CreateDaySchedule();
                 schedule = Processor.GetSchedule();
                 haveSchedule = true;
-                //Console.WriteLine("Schedule loaded successfully...\n");
                 Logger.Log("Schedule loaded successfully...\n");
             }
             catch (Exception ex)
             {
-                //Console.WriteLine($"Error loading schedule: {ex.Message}");
                 Logger.Log($"Error loading schedule: {ex.Message}");
                 isRunning = false; // will stop the loop
             }
