@@ -1,17 +1,14 @@
 using System;
+using System.Threading;
+using Log;
 
 namespace Start
 {
     public class Base
     {
-        public static void Main(string[] args)
+        static async Task Main(string[] args)
         {
-            // Call the App class that will start the program
-
-            // TODO Get run/pause command arguments from the client
-            App.Start(bool.Parse(args[0]));
-            //App.TestMethod();
-            
+            await SchedulerProcessorRunner.RunAsync(args);
         }
     }
 }

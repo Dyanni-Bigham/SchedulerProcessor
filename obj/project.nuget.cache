@@ -1,10 +1,14 @@
 {
   "version": 2,
-  "dgSpecHash": "gr+Y17lesnk=",
+  "dgSpecHash": "2igO6hburx0=",
   "success": true,
-  "projectFilePath": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcesser\\SchedulerProcesser.csproj",
+  "projectFilePath": "C:\\Users\\dyann\\Documents\\Development\\SchedulerProcessor\\SchedulerProcessor.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\dyann\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+    "C:\\Users\\dyann\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.7\\microsoft.net.illink.tasks.8.0.7.nupkg.sha512",
+    "C:\\Users\\dyann\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512",
+    "C:\\Users\\dyann\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.7\\microsoft.netcore.app.runtime.win-x64.8.0.7.nupkg.sha512",
+    "C:\\Users\\dyann\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.7\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.7.nupkg.sha512",
+    "C:\\Users\\dyann\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.7\\microsoft.aspnetcore.app.runtime.win-x64.8.0.7.nupkg.sha512"
   ],
   "logs": []
 }

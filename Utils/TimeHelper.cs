@@ -6,7 +6,6 @@ namespace Utils
     {
         public static string Conver12HoursTo24Hours(DateTime time)
         {
-            //Console.WriteLine("Converting time from 12 clock to 24 clock");
             Logger.Log("Converting time from 12 clock to 24 clock");
 
             return time.ToString("HH:mm");
@@ -14,14 +13,12 @@ namespace Utils
 
         public static DateTime GetCurrentTime()
         {
-            //Console.WriteLine($"Getting current time {DateTime.Now}");
             Logger.Log($"Getting current time {DateTime.Now}");
             return DateTime.Now;
         }
 
         public static bool IsValidInterval(DateTime time)
         {
-            //DateTime date = DateTime.Parse(time, System.Globalization.CultureInfo.InvariantCulture);
             int minutes = time.Minute;
             
             return minutes == 0 || minutes == 15 || minutes == 30 || minutes == 45;
@@ -31,7 +28,6 @@ namespace Utils
         {
             int minutes = time.Minute;
             int nextInterval  = ((minutes / 15) + 1) * 15;
-            //int minutAdjustment = nextInterval - minutes;
 
             if (nextInterval == 60)
             {
@@ -66,9 +62,6 @@ namespace Utils
             }
 
             TimeSpan sleepDuration = nextIntervalTime - now;
-            
-            //Console.WriteLine(sleepDuration);
-            //Console.WriteLine("Sleeping for 15 minutes\n");
             Logger.Log("Sleeping for 15 minutes\n");
             Thread.Sleep(sleepDuration);
         }
@@ -76,7 +69,6 @@ namespace Utils
         public static void SleepUntilNextInterval(DateTime adjustedInterval, DateTime currentTime)
         {
             TimeSpan sleepDuration = adjustedInterval - currentTime;
-            //Console.WriteLine(sleepDuration);
             Thread.Sleep(sleepDuration);
         }
     }
